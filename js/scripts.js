@@ -47,42 +47,16 @@ $(document).ready(function() {
     var secondSide = parseInt($("input#new-second-side").val());
     var thirdSide = parseInt($("input#new-third-side").val());
 
-    // if (firstSide === secondSide && firstSide === thirdSide){
-    //   var equilateral = "This is an equilateral triangle!"
-    // }
-    //
-    // else if (firstSide + secondSide <= thirdSide || firstSide + thirdSide <= secondSide || secondSide + thirdSide <= firstSide){
-    //   alert ("This is not a triangle! Try again")
-    // }
-    //
-    // else if (firstSide === secondSide || firstSide === thirdSide || secondSide === thirdSide && firstSide + secondSide > thirdSide){
-    //   alert ("This is an isosceles triangle!")
-    // }
-    //
-    // else if (firstSide === secondSide || firstSide === thirdSide || secondSide === thirdSide && firstSide + thirdSide > secondSide){
-    //   alert ("This is an isosceles triangle!")
-    // }
-    //
-    // else if (firstSide === secondSide || firstSide === thirdSide || secondSide === thirdSide && secondSide + thirdSide > firstSide){
-    //   alert ("This is an isosceles triangle!")
-    // }
-    //
-    // else if (firstSide !== secondSide && firstSide !== thirdSide && secondSide !== thirdSide){
-    //   alert ("This is a scalene triangle!")
-    // }
-    //
-    // else {
-    //   alert ("What did you do?! This is an error")
-    // }
     var newTriangle = new Triangle(firstSide, secondSide, thirdSide);
 
     $("ul#triangles").append("<li><span class='result'>" + newTriangle.triangleNames() + "</span></li>");
 
-    // $(".contact").last().click(function() {
-    //   $("#show-contact").show();
-    //   $("#show-contact h2").text(newContact.firstName);
-    //   $(".first-name").text(newContact.firstName);
-    //   $(".last-name").text(newContact.lastName);
-    //   $(".street").text(newContact.street);
+    $(".result").last().click(function() {
+      $("#show-triangle").show();
+      $("#show-triangle h2").text(newTriangle.triangleNames);
+      $(".first-side").text(newTriangle.firstSide);
+      $(".second-side").text(newTriangle.secondSide);
+      $(".third-side").text(newTriangle.thirdSide);
+    });
   });
 });
